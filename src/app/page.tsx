@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gallery } from "@/components/Gallery";
@@ -35,8 +35,7 @@ export default function Portfolio() {
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1 }}
-  className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-[0_5px_10px_rgba(0,0,0,0.8)]"
->
+  className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-[0_5px_10px_rgba(0,0,0,0.8)]">
   Hi, I'm Dhruv Patel
 </motion.h1>
 
@@ -122,6 +121,7 @@ export default function Portfolio() {
           image: "/certificates/google.png",
           tags: ["#ml", "#tensorflow"]
         },
+
         {
           title: "TensorFlow Developer",
           image: "/certificates/google.png",
