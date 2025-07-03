@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gallery } from "@/components/Gallery";
 import SkillCard from "@/components/SkillCard";
+import Image from "next/image"; // Keeping import as we'll use it properly
 
 export default function Portfolio() {
   return (
@@ -31,13 +31,14 @@ export default function Portfolio() {
       <section className="min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left space-y-6 md:space-y-0 md:space-x-12">
         {/* Text */}
         <div>
-        <motion.h1
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-[0_5px_10px_rgba(0,0,0,0.8)]">
-  Hi, I'm Dhruv Patel
-</motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-[0_5px_10px_rgba(0,0,0,0.8)]"
+          >
+            Hi, I&apos;m Dhruv Patel
+          </motion.h1>
 
           <motion.h2
             initial={{ opacity: 0 }}
@@ -62,9 +63,11 @@ export default function Portfolio() {
         {/* ✅ Profile Image */}
         <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px] mt-10 md:mt-0 rounded-full overflow-hidden border-4 border-white/20 shadow-xl hover:scale-105 transition-transform duration-500 flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 via-purple-500 to-blue-500 blur-2xl opacity-50"></div>
-          <img
+          <Image
             src="/profile/boy1.png"
             alt="Dhruv"
+            width={440}
+            height={440}
             className="relative w-[110%] h-auto object-contain translate-y-4 z-10"
           />
         </div>
@@ -101,68 +104,70 @@ export default function Portfolio() {
 
       {/* ✅ Certificates */}
       <section id="certificates" className="w-full max-w-5xl mb-16">
-  <h2 className="text-3xl font-bold mb-6 text-white">Certificates</h2>
-  <div className="relative">
-    {/* Scroll container */}
-    <div className="flex overflow-x-auto no-scrollbar space-x-6 pb-4">
-      {[
-        {
-          title: "Agile Scrum Master",
-          image: "/certificates/agile.png",
-          tags: ["#Devops", "#ScrumMaster"]
-        },
-        {
-          title: "React Native Developer",
-          image: "/certificates/morgan.png",
-          tags: ["#mobile", "#reactnative"]
-        },
-        {
-          title: "TensorFlow Developer",
-          image: "/certificates/google.png",
-          tags: ["#ml", "#tensorflow"]
-        },
+        <h2 className="text-3xl font-bold mb-6 text-white">Certificates</h2>
+        <div className="relative">
+          {/* Scroll container */}
+          <div className="flex overflow-x-auto no-scrollbar space-x-6 pb-4">
+            {[
+              {
+                title: "Agile Scrum Master",
+                image: "/certificates/agile.png",
+                tags: ["#Devops", "#ScrumMaster"]
+              },
+              {
+                title: "React Native Developer",
+                image: "/certificates/morgan.png",
+                tags: ["#mobile", "#reactnative"]
+              },
+              {
+                title: "TensorFlow Developer",
+                image: "/certificates/google.png",
+                tags: ["#ml", "#tensorflow"]
+              },
 
-        {
-          title: "TensorFlow Developer",
-          image: "/certificates/google.png",
-          tags: ["#ml", "#tensorflow"]
-        },
-        // ➕ Add more here!
-      ].map((cert, i) => (
-        <div
-          key={i}
-          className="min-w-[250px] bg-black/30 backdrop-blur rounded-xl p-4 shadow-lg flex-shrink-0"
-        >
-          <img
-            src={cert.image}
-            alt={cert.title}
-            className="w-full h-40 object-contain mb-4 rounded"
-          />
-          <h3 className="text-lg font-bold text-white mb-2">{cert.title}</h3>
-          <div className="flex flex-wrap gap-2">
-            {cert.tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="text-xs px-2 py-1 bg-white/10 text-pink-400 rounded-full"
+              {
+                title: "TensorFlow Developer",
+                image: "/certificates/google.png",
+                tags: ["#ml", "#tensorflow"]
+              },
+              // ➕ Add more here!
+            ].map((cert, i) => (
+              <div
+                key={i}
+                className="min-w-[250px] bg-black/30 backdrop-blur rounded-xl p-4 shadow-lg flex-shrink-0"
               >
-                {tag}
-              </span>
+                <Image
+                  src={cert.image}
+                  alt={cert.title}
+                  width={250}
+                  height={160}
+                  className="w-full h-40 object-contain mb-4 rounded"
+                />
+                <h3 className="text-lg font-bold text-white mb-2">{cert.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {cert.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs px-2 py-1 bg-white/10 text-pink-400 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      ))}
-    </div>
 
-    {/* Optional: Arrows for scroll */}
-    {/* Just for looks: add functionality with JS if you want */}
-    <div className="absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 p-2 rounded-full cursor-pointer">
-      ←
-    </div>
-    <div className="absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 p-2 rounded-full cursor-pointer">
-      →
-    </div>
-  </div>
-</section>
+          {/* Optional: Arrows for scroll */}
+          {/* Just for looks: add functionality with JS if you want */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 p-2 rounded-full cursor-pointer">
+            ←
+          </div>
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 p-2 rounded-full cursor-pointer">
+            →
+          </div>
+        </div>
+      </section>
 
       {/* ✅ Skills */}
       <section id="skills" className="w-full max-w-5xl mb-16">
@@ -194,48 +199,48 @@ export default function Portfolio() {
 
       {/* ✅ Experience */}
       <section id="experience" className="w-full max-w-5xl mb-16">
-  <div className="text-center mb-6">
-    <p className="uppercase tracking-widest text-sm text-pink-400 mb-2">
-      -----------------------------
-    </p>
-    <h2 className="text-4xl font-extrabold text-white mb-2">
-      Where I've Made Impact
-    </h2>
-    <p className="text-lg font-medium text-white/80">
-      My Work Experience.
-    </p>
-    <p className="uppercase tracking-widest text-sm text-pink-400 mt-2">
-      -----------------------------
-    </p>
-  </div>
-  <div className="relative border-l-4 border-pink-500 ml-4">
-    {/* Job 1 */}
-    <div className="mb-10 ml-8">
-      <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
-      <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
-        <h3 className="text-xl font-semibold text-white mb-1">Software Engineer</h3>
-        <p className="text-sm mb-2 font-bold text-white/70">Vaibhu Safety | Sep 2021 – Aug 2023</p>
-        <ul className="list-disc ml-5 font-semibold text-sm text-white/80 ">
-          <li>Built monitoring systems using ASP.NET, Docker, AKS, and SQL Server.</li>
-          <li>Implemented CI/CD and optimized app performance by 45%.</li>
-        </ul>
-      </Card>
-    </div>
+        <div className="text-center mb-6">
+          <p className="uppercase tracking-widest text-sm text-pink-400 mb-2">
+            -----------------------------
+          </p>
+          <h2 className="text-4xl font-extrabold text-white mb-2">
+            Where I&apos;ve Made Impact
+          </h2>
+          <p className="text-lg font-medium text-white/80">
+            My Work Experience.
+          </p>
+          <p className="uppercase tracking-widest text-sm text-pink-400 mt-2">
+            -----------------------------
+          </p>
+        </div>
+        <div className="relative border-l-4 border-pink-500 ml-4">
+          {/* Job 1 */}
+          <div className="mb-10 ml-8">
+            <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
+            <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
+              <h3 className="text-xl font-semibold text-white mb-1">Software Engineer</h3>
+              <p className="text-sm mb-2 font-bold text-white/70">Vaibhu Safety | Sep 2021 – Aug 2023</p>
+              <ul className="list-disc ml-5 font-semibold text-sm text-white/80 ">
+                <li>Built monitoring systems using ASP.NET, Docker, AKS, and SQL Server.</li>
+                <li>Implemented CI/CD and optimized app performance by 45%.</li>
+              </ul>
+            </Card>
+          </div>
 
-    {/* Job 2 */}
-    <div className="mb-10 ml-8">
-      <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
-      <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
-        <h3 className="text-xl font-semibold text-white mb-1">Software Engineer Intern</h3>
-        <p className="text-sm mb-2 font-bold text-white/70">L&T Power | Nov 2020 – Jul 2021</p>
-        <ul className="list-disc ml-5 font-semibold text-sm text-white/80">
-          <li>Designed ML models for defect detection in radiographs using XGBoost.</li>
-          <li>Automated data pipelines and improved data quality.</li>
-        </ul>
-      </Card>
-    </div>
-  </div>
-</section>
+          {/* Job 2 */}
+          <div className="mb-10 ml-8">
+            <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
+            <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
+              <h3 className="text-xl font-semibold text-white mb-1">Software Engineer Intern</h3>
+              <p className="text-sm mb-2 font-bold text-white/70">L&T Power | Nov 2020 – Jul 2021</p>
+              <ul className="list-disc ml-5 font-semibold text-sm text-white/80">
+                <li>Designed ML models for defect detection in radiographs using XGBoost.</li>
+                <li>Automated data pipelines and improved data quality.</li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
 
 
       {/* ✅ Volunteer */}
