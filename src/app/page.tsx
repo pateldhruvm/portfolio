@@ -199,7 +199,7 @@ export default function Portfolio() {
       -----------------------------
     </p>
     <h2 className="text-4xl font-extrabold text-white mb-2">
-      Where I’ve Made Impact
+      Where I've Made Impact
     </h2>
     <p className="text-lg font-medium text-white/80">
       My Work Experience.
