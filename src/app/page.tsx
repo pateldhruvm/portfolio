@@ -170,78 +170,121 @@ export default function Portfolio() {
       </section>
 
       {/* ✅ Skills */}
-      <section id="skills" className="w-full max-w-5xl mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-white">Skills</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {[
-            { name: "React", icon: "/logos/react.png" },
-            { name: "Python", icon: "/logos/python.png" },
-            { name: "Java", icon: "/logos/java.png" },
-            { name: "JavaScript", icon: "/logos/javascript.png" },
-            { name: "Git", icon: "/logos/git.png" },
-            { name: "Tailwind CSS", icon: "/logos/tailwind.png" },
-            { name: "FastAPI", icon: "/logos/fastapi.png" },
-            { name: "SQL", icon: "/logos/sql.png" },
-            { name: "Docker", icon: "/logos/docker.png" },
-            { name: "AWS", icon: "/logos/aws.png" },
-            { name: "Next.js", icon: "/logos/nextjs.png" },
-            { name: "TypeScript", icon: "/logos/typescript.png" },
-            { name: "Node.js", icon: "/logos/nodejs.png" },
-            { name: "MongoDB", icon: "/logos/mongodb.png" },
-            { name: "golang", icon: "/logos/golang.png" },
-            { name: "angularjs", icon: "/logos/angularjs.png" },
-            { name: "HTML5", icon: "/logos/html5.png" },
-          ].map((tech, i) => (
-            <SkillCard key={i} icon={tech.icon} name={tech.name} index={i} />
-          ))}
-        </div>
-      </section>
+      <section
+  id="skills"
+  className="w-screen mb-16 relative overflow-hidden bg-black"
+>
+  {/* ✅ Video background */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  >
+    <source src="/backgrounds/cardsvideo.webm" type="video/webm" />
+  </video>
 
-      {/* ✅ Experience */}
-      <section id="experience" className="w-full max-w-5xl mb-16">
-        <div className="text-center mb-6">
-          <p className="uppercase tracking-widest text-sm text-pink-400 mb-2">
-            -----------------------------
-          </p>
-          <h2 className="text-4xl font-extrabold text-white mb-2">
-            Where I&apos;ve Made Impact
-          </h2>
-          <p className="text-lg font-medium text-white/80">
-            My Work Experience.
-          </p>
-          <p className="uppercase tracking-widest text-sm text-pink-400 mt-2">
-            -----------------------------
-          </p>
-        </div>
-        <div className="relative border-l-4 border-pink-500 ml-4">
-          {/* Job 1 */}
-          <div className="mb-10 ml-8">
-            <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
-            <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-1">Software Engineer</h3>
-              <p className="text-sm mb-2 font-bold text-white/70">Vaibhu Safety | Sep 2021 – Aug 2023</p>
-              <ul className="list-disc ml-5 font-semibold text-sm text-white/80 ">
-                <li>Built monitoring systems using ASP.NET, Docker, AKS, and SQL Server.</li>
-                <li>Implemented CI/CD and optimized app performance by 45%.</li>
-              </ul>
-            </Card>
-          </div>
+  {/* ✅ Skills content */}
+  <div className="relative z-10 p-8 max-w-5xl mx-auto">
+    <h2 className="text-3xl font-bold mb-6 text-white">Skills</h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {[
+        { name: "React", icon: "/logos/react.png" },
+        { name: "Python", icon: "/logos/python.png" },
+        { name: "Java", icon: "/logos/java.png" },
+        { name: "JavaScript", icon: "/logos/javascript.png" },
+        { name: "Git", icon: "/logos/git.png" },
+        { name: "Tailwind CSS", icon: "/logos/tailwind.png" },
+        { name: "FastAPI", icon: "/logos/fastapi.png" },
+        { name: "SQL", icon: "/logos/sql.png" },
+        { name: "Docker", icon: "/logos/docker.png" },
+        { name: "AWS", icon: "/logos/aws.png" },
+        { name: "Next.js", icon: "/logos/nextjs.png" },
+        { name: "TypeScript", icon: "/logos/typescript.png" },
+        { name: "Node.js", icon: "/logos/nodejs.png" },
+        { name: "MongoDB", icon: "/logos/mongodb.png" },
+        { name: "Golang", icon: "/logos/golang.png" },
+        { name: "AngularJS", icon: "/logos/angularjs.png" },
+        { name: "HTML5", icon: "/logos/html5.png" },
+      ].map((tech, i) => (
+        <SkillCard key={i} icon={tech.icon} name={tech.name} index={i} />
+      ))}
+    </div>
+  </div>
+</section>
 
-          {/* Job 2 */}
-          <div className="mb-10 ml-8">
-            <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
-            <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-1">Software Engineer Intern</h3>
-              <p className="text-sm mb-2 font-bold text-white/70">L&T Power | Nov 2020 – Jul 2021</p>
-              <ul className="list-disc ml-5 font-semibold text-sm text-white/80">
-                <li>Designed ML models for defect detection in radiographs using XGBoost.</li>
-                <li>Automated data pipelines and improved data quality.</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
 
+
+
+{/* ✅ Experience */}
+<section
+  id="experience"
+  className="w-screen mb-16 relative overflow-hidden"
+>
+  {/* ✅ Video background */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover"
+  >
+    <source src="/backgrounds/experiencebg.mp4" type="video/mp4" />
+  </video>
+
+  {/* ✅ Content */}
+  <div className="relative z-10 max-w-5xl mx-auto px-4">
+    <div className="text-center mb-6">
+      <p className="uppercase tracking-widest text-sm text-pink-400 mb-2">
+        -----------------------------
+      </p>
+      <h2 className="text-4xl font-extrabold text-white mb-2">
+        Where I&apos;ve Made Impact
+      </h2>
+      <p className="text-lg font-medium text-white/80">
+        My Work Experience.
+      </p>
+      <p className="uppercase tracking-widest text-sm text-pink-400 mt-2">
+        -----------------------------
+      </p>
+    </div>
+
+    <div className="relative border-l-4 border-pink-500 ml-4">
+      {/* Job 1 */}
+      <div className="mb-10 ml-8">
+        <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
+        <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
+          <h3 className="text-xl font-semibold text-white mb-1">Software Engineer</h3>
+          <p className="text-sm mb-2 font-bold text-white/70">
+            Vaibhu Safety | Sep 2021 – Aug 2023
+          </p>
+          <ul className="list-disc ml-5 font-semibold text-sm text-white/80 ">
+            <li>Built monitoring systems using ASP.NET, Docker, AKS, and SQL Server.</li>
+            <li>Implemented CI/CD and optimized app performance by 45%.</li>
+          </ul>
+        </Card>
+      </div>
+
+      {/* Job 2 */}
+      <div className="mb-10 ml-8">
+        <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-2.5 top-1"></div>
+        <Card className="p-4 shadow-lg bg-black/30 backdrop-blur rounded-lg">
+          <h3 className="text-xl font-semibold text-white mb-1">
+            Software Engineer Intern
+          </h3>
+          <p className="text-sm mb-2 font-bold text-white/70">
+            L&T Power | Nov 2020 – Jul 2021
+          </p>
+          <ul className="list-disc ml-5 font-semibold text-sm text-white/80">
+            <li>Designed ML models for defect detection in radiographs using XGBoost.</li>
+            <li>Automated data pipelines and improved data quality.</li>
+          </ul>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ✅ Volunteer */}
       <section id="volunteer" className="w-full max-w-5xl mb-16">
